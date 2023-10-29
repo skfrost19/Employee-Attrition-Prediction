@@ -4,16 +4,19 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 
-url = "https://raw.githubusercontent.com/IBM/employee-attrition-aif360/master/data/emp_attrition.csv"
-folder_name = "data"
+def data_ingestion():
+        """Download data from GitHub repository and save it in the data folder"""
 
-if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
+        url = "https://raw.githubusercontent.com/IBM/employee-attrition-aif360/master/data/emp_attrition.csv"
+        folder_name = "data"
 
-try:
-        urllib.request.urlretrieve(url, os.path.join(folder_name, "data.csv"))
-        logging.info("Data downloaded successfully!")
-except Exception as e:
-        logging.error(f"Error downloading data: {e}")
-        raise CustomException(e,sys)
+        os.makedirs(folder_name, exist_ok=True)
 
+        try:    
+                logging.info("Downloading data...")
+                urllib.request.urlretrieve(url, os.path.join(folder_name, "employee_attririon.csv"))
+                logging.info("Data downloaded successfully!")
+
+        except Exception as e:
+                logging.error(f"Error downloading data: {e}")
+                raise CustomException(e,sys)
