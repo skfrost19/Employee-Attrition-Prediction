@@ -11,10 +11,10 @@ def get_requirements(filename:str) -> List[str]:
     return requirements.remove("-e .") if HYPHEN_E_DOT in requirements else requirements
 
 setup(
-    name = 'ivp-project',
+    name = 'iml-project',
     version = '0.0.1',
     packages = find_packages(exclude=['tests*']),
-    author = 'Shahil Kumar, Manu Pande, Madhevu Lokesh, Gurpreet Chawla',
+    author = 'Shahil Kumar, Manu Pande, Gourav Rawat',
     license = 'MIT',
     long_description = open('README.md').read(),
     install_requires = get_requirements("requirements.txt")
