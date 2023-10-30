@@ -14,7 +14,7 @@ def data_ingestion():
 
         try:    
                 logging.info("Downloading data...")
-                urllib.request.urlretrieve(url, os.path.join(folder_name, "employee_attririon.csv"))
+                urllib.request.urlretrieve(url, os.path.join(folder_name, "employee_attrition.csv"))
                 logging.info("Data downloaded successfully!")
 
         except Exception as e:
