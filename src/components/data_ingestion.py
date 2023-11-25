@@ -12,6 +12,11 @@ def data_ingestion():
 
         os.makedirs(folder_name, exist_ok=True)
 
+        # Check if data has already been downloaded
+        if os.path.isfile(os.path.join(folder_name, "employee_attrition.csv")):
+                logging.info("Data already downloaded!")
+                return
+
         try:    
                 logging.info("Downloading data...")
                 urllib.request.urlretrieve(url, os.path.join(folder_name, "employee_attrition.csv"))
