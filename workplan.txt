@@ -1,0 +1,15 @@
+-delete useless columns: 'BusinessTravel', 'Department','Gender', 'JobRole', 'MaritalStatus', 'OverTime','EducationField'
+
+-handle imbalanced data
+-plot a graph for attrition target value (yes and no)
+
+-apply random forest classifier
+-apply logistic regression
+-apply svm classifier
+-apply all the above with cross validation
+
+-take test size as 0.2 and random state as 123
+
+-compare the results of the three models
+-choose the best model
+-apply grid search to improve the model
