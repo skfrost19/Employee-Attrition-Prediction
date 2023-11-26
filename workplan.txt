@@ -1,5 +1,21 @@
--delete useless columns: 'BusinessTravel', 'Department','Gender', 'JobRole', 'MaritalStatus', 'OverTime','EducationField'
+====  Data Transformation ====
+transform the data as follows:
+-convert categorical data to numerical data
+-handle missing values
+-standardize the data
+-upsample the data
 
+
+==== Model Trainer ====
+- apply random forest classifier
+- save the model as `model.pkl` in a folder called `models` in root directory 
+
+==== Pipeline ====
+- create a pipeline to load the model and predict the target value
+
+====  General ====
+
+-delete useless columns: 'BusinessTravel', 'Department','Gender', 'JobRole', 'MaritalStatus', 'OverTime','EducationField'
 -handle imbalanced data
 -plot a graph for attrition target value (yes and no)
 
