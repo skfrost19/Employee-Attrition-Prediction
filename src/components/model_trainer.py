@@ -10,7 +10,9 @@ import pandas as pd
 
 
 class ModelTrainer:
-    def __init__(self, data: pd.DataFrame, target: str, enforce_save: bool = False)->None:
+    def __init__(
+        self, data: pd.DataFrame, target: str, enforce_save: bool = False
+    ) -> None:
         """
         Constructor of ModelTrainer class
         Params:
@@ -26,19 +28,24 @@ class ModelTrainer:
         self.X_test = None
         self.y_train = None
         self.y_test = None
-    
-    def split_data(self)->None:
+
+    def split_data(self) -> None:
         """
         Split data into train and test
         """
         try:
             logging.info("Splitting data into train and test")
-            self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.data.drop(self.target, axis=1), self.data[self.target], test_size=0.2, random_state=123)
+            self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
+                self.data.drop(self.target, axis=1),
+                self.data[self.target],
+                test_size=0.2,
+                random_state=123,
+            )
         except Exception as e:
             logging.error(f"Error in split_data: {e}")
             raise CustomException(e, sys)
 
-    def train_model(self)->None:
+    def train_model(self) -> None:
         """
         Train model
         Params:
@@ -50,8 +57,8 @@ class ModelTrainer:
         except Exception as e:
             logging.error(f"Error in train_model: {e}")
             raise CustomException(e, sys)
-        
-    def evaluate_model(self)->None:
+
+    def evaluate_model(self) -> None:
         """
         Evaluate model
         """
@@ -60,12 +67,14 @@ class ModelTrainer:
             y_pred = self.model.predict(self.X_test)
             print(f"Accuracy score: {accuracy_score(self.y_test, y_pred)}")
             print(f"Confusion matrix: {confusion_matrix(self.y_test, y_pred)}")
-            print(f"Classification report: {classification_report(self.y_test, y_pred)}")
+            print(
+                f"Classification report: {classification_report(self.y_test, y_pred)}"
+            )
         except Exception as e:
             logging.error(f"Error in evaluate_model: {e}")
             raise CustomException(e, sys)
-        
-    def save_model(self)->None:
+
+    def save_model(self) -> None:
         """
         Save model
         """
@@ -76,12 +85,14 @@ class ModelTrainer:
                     os.remove(self.save_path)
             if not os.path.exists(self.save_path):
                 os.makedirs(self.save_path)
-            pickle.dump(self.model, open(os.path.join(self.save_path, "model.pkl"), "wb"))
+            pickle.dump(
+                self.model, open(os.path.join(self.save_path, "model.pkl"), "wb")
+            )
         except Exception as e:
             logging.error(f"Error in save_model: {e}")
             raise CustomException(e, sys)
-        
-    def run(self, model)->None:
+
+    def run(self, model) -> None:
         """
         Run model training
         Params:
@@ -96,4 +107,3 @@ class ModelTrainer:
         except Exception as e:
             logging.error(f"Error in run: {e}")
             raise CustomException(e, sys)
-        
