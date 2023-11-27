@@ -44,13 +44,16 @@ class DataTransformation:
             logging.info("Dropping unwanted columns")
             data = data.drop(
                 [
-                    "BusinessTravel",
-                    "Department",
-                    "Gender",
-                    "JobRole",
-                    "MaritalStatus",
-                    "OverTime",
+                    "HourlyRate",
+                    "PercentSalaryHike",
+                    "MonthlyRate",
+                    "PerformanceRating",
                     "EducationField",
+                    "EmployeeNumber",
+                    "Over18",
+                    "StandardHours",
+                    "Education",
+                    "Gender",
                 ],
                 axis=1,
             )
@@ -75,30 +78,13 @@ class DataTransformation:
                 df_minority,
                 replace=True,
                 n_samples=df_majority.shape[0],
-                random_state=123,
+                random_state=42,
             )
             df_upsampled = pd.concat([df_majority, df_minority_upsampled])
             return df_upsampled
 
         except Exception as e:
             logging.error(f"Error in upsample_data: {e}")
-            raise CustomException(e, sys)
-
-    def standardize_categorise_data(self, data: pd.DataFrame) -> pd.DataFrame:
-        """
-        Categorical to numerical and standardize data
-        Params:
-                data: pd.DataFrame
-        Return:
-                np.ndarray
-        """
-        try:
-            logging.info("Standardizing and categorizing data")
-            # data = categorical_to_numerical(data)
-            data = standarize_data(data, self.target)
-            return data
-        except Exception as e:
-            logging.error(f"Error in standardize_categorise_data: {e}")
             raise CustomException(e, sys)
 
     def run(self) -> pd.DataFrame:
@@ -112,9 +98,12 @@ class DataTransformation:
         try:
             logging.info("Running data transformation")
             data = self.load_data()
+            data = self.drop_unwanted_columns(data)
+            logging.info("Converting categorical columns to numerical")
             data = categorical_to_numerical(data)
             data = self.upsample_data(data)
-            data = self.standardize_categorise_data(data)
+            logging.info("Standarizing data")
+            data = standarize_data(data, self.target)
             return data
         except Exception as e:
             logging.error(f"Error in run: {e}")

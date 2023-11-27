@@ -97,9 +97,9 @@ class ModelTrainer:
         """
         try:
             logging.info("Saving model")
-            if self.enforce_save:
-                if os.path.exists(self.save_path):
-                    os.remove(self.save_path)
+            # if self.enforce_save:
+            #     if os.path.exists(self.save_path):
+            #         os.remove(self.save_path)
             if not os.path.exists(self.save_path):
                 os.makedirs(self.save_path)
             pickle.dump(
