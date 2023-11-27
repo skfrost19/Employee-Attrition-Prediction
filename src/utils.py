@@ -6,6 +6,7 @@ import numpy as np
 import sys
 from sklearn.preprocessing import LabelEncoder
 
+
 def standarize_data(data: pd.DataFrame, target: str) -> pd.DataFrame:
     """
     Standarize data using StandardScaler
@@ -22,14 +23,12 @@ def standarize_data(data: pd.DataFrame, target: str) -> pd.DataFrame:
         columns = data.columns - [target]
         scaler = StandardScaler()
         data = scaler.fit_transform(data)
-        data = np.concatenate((data, np.array(data[target]).reshape(-1,1)), axis=1)
-        data = pd.DataFrame(data, columns=columns+[target])
+        data = np.concatenate((data, np.array(data[target]).reshape(-1, 1)), axis=1)
+        data = pd.DataFrame(data, columns=columns + [target])
         return data
     except Exception as e:
         logging.error(f"Error in standarize_data: {e}")
         raise CustomException(e, sys)
-
-
 
 
 def categorical_to_numerical(data: pd.DataFrame, target: str) -> pd.DataFrame:

@@ -1,7 +1,6 @@
 ====  Data Transformation ====
 transform the data as follows:
 -convert categorical data to numerical data
--handle missing values
 -standardize the data
 -upsample the data
 

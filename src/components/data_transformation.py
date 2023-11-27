@@ -1,11 +1,11 @@
 import pandas as pd
 import sys
-
-sys.path.append(".")
 from src.exception import CustomException
 from src.logger import logging
 from src.utils import standarize_data, categorical_to_numerical
 from sklearn.utils import resample
+
+sys.path.append(".")
 
 
 class DataTransformation:
