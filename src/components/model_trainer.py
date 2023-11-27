@@ -16,8 +16,11 @@ class ModelTrainer:
         """
         Constructor of ModelTrainer class
         Params:
-            data: pd.DataFrame
-            target: str
+                data: pd.DataFrame
+                target: str
+                enforce_save: bool
+        Return:
+                None
         """
         self.data = data
         self.target = target
@@ -32,6 +35,10 @@ class ModelTrainer:
     def split_data(self) -> None:
         """
         Split data into train and test
+        Params:
+                None
+        Return:
+                None
         """
         try:
             logging.info("Splitting data into train and test")
@@ -49,7 +56,9 @@ class ModelTrainer:
         """
         Train model
         Params:
-            model: sklearn random forest model
+                None
+        Return:
+                None
         """
         try:
             logging.info("Training model")
@@ -61,6 +70,10 @@ class ModelTrainer:
     def evaluate_model(self) -> None:
         """
         Evaluate model
+        Params:
+                None
+        Return:
+                None
         """
         try:
             logging.info("Evaluating model")
@@ -77,6 +90,10 @@ class ModelTrainer:
     def save_model(self) -> None:
         """
         Save model
+        Params:
+                model: sklearn model
+        Return:
+                None
         """
         try:
             logging.info("Saving model")
@@ -92,16 +109,18 @@ class ModelTrainer:
             logging.error(f"Error in save_model: {e}")
             raise CustomException(e, sys)
 
-    def run(self, model) -> None:
+    def run(self) -> None:
         """
         Run model training
         Params:
-            model: sklearn model
+                model: sklearn model
+        Return:
+                None
         """
         try:
             logging.info("Running model training")
             self.split_data()
-            self.train_model(model)
+            self.train_model()
             self.evaluate_model()
             self.save_model()
         except Exception as e:

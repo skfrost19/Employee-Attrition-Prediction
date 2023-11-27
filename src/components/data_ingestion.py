@@ -6,7 +6,12 @@ from src.logger import logging
 
 
 def data_ingestion():
-    """Download data from GitHub repository and save it in the data folder"""
+    """Download data from GitHub repository and save it in the data folder
+    Params:
+            None
+    Return:
+            None
+    """
 
     url = "https://raw.githubusercontent.com/IBM/employee-attrition-aif360/master/data/emp_attrition.csv"
     folder_name = "data"

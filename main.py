@@ -1,5 +1,5 @@
 # This script will be used to test the functions
 
-from src.components.data_ingestion import data_ingestion
+from src.components.pipeline import pipeline
 
-data_ingestion()
+pipeline()

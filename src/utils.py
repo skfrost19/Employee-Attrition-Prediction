@@ -19,11 +19,14 @@ def standarize_data(data: pd.DataFrame, target: str) -> pd.DataFrame:
 
     try:
         logging.info("Standarizing data")
+        # save columns in list
+        columns = list(data.columns)
+        columns.remove(target)
+        target_data = data[target]
         data = data.drop(target, axis=1)
-        columns = data.columns - [target]
         scaler = StandardScaler()
         data = scaler.fit_transform(data)
-        data = np.concatenate((data, np.array(data[target]).reshape(-1, 1)), axis=1)
+        data = np.concatenate((data, np.array(target_data).reshape(-1, 1)), axis=1)
         data = pd.DataFrame(data, columns=columns + [target])
         return data
     except Exception as e:
@@ -31,7 +34,7 @@ def standarize_data(data: pd.DataFrame, target: str) -> pd.DataFrame:
         raise CustomException(e, sys)
 
 
-def categorical_to_numerical(data: pd.DataFrame, target: str) -> pd.DataFrame:
+def categorical_to_numerical(data: pd.DataFrame) -> pd.DataFrame:
     """
     Convert categorical columns to numerical
     Params:

@@ -20,9 +20,9 @@ class DataTransformation:
         """
         Load data from csv
         Params:
-                        None
+                None
         Return:
-                        pd.DataFrame
+                pd.DataFrame
         """
         try:
             logging.info("Loading data")
@@ -36,9 +36,9 @@ class DataTransformation:
         """
         Drop unwanted columns
         Params:
-                        data: pd.DataFrame
+                data: pd.DataFrame
         Return:
-                        pd.DataFrame
+                pd.DataFrame
         """
         try:
             logging.info("Dropping unwanted columns")
@@ -63,9 +63,9 @@ class DataTransformation:
         """
         Upsample data
         Params:
-                        data: pd.DataFrame
+                data: pd.DataFrame
         Return:
-                        pd.DataFrame
+                pd.DataFrame
         """
         try:
             logging.info("Upsampling data")
@@ -88,13 +88,13 @@ class DataTransformation:
         """
         Categorical to numerical and standardize data
         Params:
-                        data: pd.DataFrame
+                data: pd.DataFrame
         Return:
-                        np.ndarray
+                np.ndarray
         """
         try:
             logging.info("Standardizing and categorizing data")
-            data = categorical_to_numerical(data, self.target)
+            # data = categorical_to_numerical(data)
             data = standarize_data(data, self.target)
             return data
         except Exception as e:
@@ -105,13 +105,14 @@ class DataTransformation:
         """
         Run data transformation
         Params:
-                        None
+                None
         Return:
-                        np.ndarray
+                np.ndarray
         """
         try:
             logging.info("Running data transformation")
             data = self.load_data()
+            data = categorical_to_numerical(data)
             data = self.upsample_data(data)
             data = self.standardize_categorise_data(data)
             return data
