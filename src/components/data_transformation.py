@@ -32,6 +32,33 @@ class DataTransformation:
             logging.error(f"Error in load_data: {e}")
             raise CustomException(e, sys)
 
+    def drop_unwanted_columns(self, data: pd.DataFrame) -> pd.DataFrame:
+        """
+        Drop unwanted columns
+        Params:
+                        data: pd.DataFrame
+        Return:
+                        pd.DataFrame
+        """
+        try:
+            logging.info("Dropping unwanted columns")
+            data = data.drop(
+                [
+                    "BusinessTravel",
+                    "Department",
+                    "Gender",
+                    "JobRole",
+                    "MaritalStatus",
+                    "OverTime",
+                    "EducationField",
+                ],
+                axis=1,
+            )
+            return data
+        except Exception as e:
+            logging.error(f"Error in drop_unwanted_columns: {e}")
+            raise CustomException(e, sys)
+
     def upsample_data(self, data: pd.DataFrame) -> pd.DataFrame:
         """
         Upsample data
