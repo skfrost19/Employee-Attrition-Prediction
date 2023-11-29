@@ -53,7 +53,7 @@ The dataset is imbalanced with the majority class being 0 (employees who have no
 The following models are built:
 
 1. Logistic Regression
-2. Decision Tree
+2. Random Forest
 3. SVM
 
 ## Model Evaluation
