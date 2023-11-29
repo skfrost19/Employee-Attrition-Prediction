@@ -13,11 +13,11 @@ def get_requirements(filename: str) -> List[str]:
 
 
 setup(
-    name="IML-Project",
-    version="0.0.1",
-    packages=find_packages(exclude=["tests*"]),
-    author="Shahil Kumar, Manu Pande, Gourav Rawat",
-    license="MIT",
-    long_description=open("README.md").read(),
-    install_requires=get_requirements("requirements.txt"),
+    name = 'IML-Project',
+    version = '0.0.1',
+    packages = find_packages(exclude=['tests*']),
+    author = 'Shahil Kumar, Manu Pande, Gourav Rawat',
+    license = 'MIT',
+    long_description = open('README.md').read(),
+    install_requires = get_requirements("requirements.txt")
 )
