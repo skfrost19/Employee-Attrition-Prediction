@@ -1,0 +1,55 @@
+====  Data Transformation ====
+transform the data as follows:
+-convert categorical data to numerical data
+-standardize the data
+-upsample the data
+
+
+==== Model Trainer ====
+- apply random forest classifier
+- save the model as `model.pkl` in a folder called `models` in root directory
+
+
+==== Encoders ====
+- save the encoders {label_encoder, standard scalar}.
+
+
+==== Pipeline ====
+- create a pipeline to load the model and predict the target value
+
+
+===== Predict =====
+- create a function to predict the target value
+- the function should take a dictionary as input and return the prediction
+
+
+====  General ====
+
+-delete useless columns: [
+                    "HourlyRate",
+                    "PercentSalaryHike",
+                    "MonthlyRate",
+                    "PerformanceRating",
+                    "EducationField",
+                    "EmployeeNumber",
+                    "Over18",
+                    "StandardHours",
+                    "Education",
+                    "Gender",
+                ]
+-handle imbalanced data
+-plot a graph for attrition target value (yes and no)
+
+-apply random forest classifier
+-apply logistic regression
+-apply svm classifier
+-apply all the above with cross validation
+
+-take test size as 0.2 and random state as 123
+
+-compare the results of the three models
+-choose the best model
+
+===== Future Work =====
+
+-apply grid search to improve the model

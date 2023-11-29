@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Employee Attrition Prediction</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('static',filename='styles/form.css') }}"
+        />
+    </head>
+    <body>
+        <form class="atr" action="/predict" method="POST">
+            <div class="atr">
+                <div class="col1">
+                    <div class="row">Age</div>
+                    <!-- <div class="row">Attrition</div> -->
+                    <div class="row">BusinessTravel</div>
+                    <div class="row">DailyRate</div>
+                    <div class="row">Department</div>
+                    <div class="row">DistanceFromHome</div>
+                    <div class="row">EmployeeCount</div>
+                    <div class="row">EnvironmentSatisfaction</div>
+                    <div class="row">JobInvolvement</div>
+                    <div class="row">JobLevel</div>
+                    <div class="row">JobRole</div>
+                    <div class="row">JobSatisfaction</div>
+                </div>
+
+                <div class="col1">
+                    <div class="row2">
+                        <input type="number" value="30" name="Age" />
+                    </div>
+
+                    <!-- <div class="row2">
+                        <select id="Attrition">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div> -->
+
+                    <div class="row2">
+                        <select name="BusinessTravel">
+                            <option value="Travel_Rarely">Travel_Rarely</option>
+                            <option value="Travel_Frequently">
+                                Travel_Frequently
+                            </option>
+                            <option value="Non-Travel">Non-Travel</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" value="" name="DailyRate" />
+                    </div>
+
+                    <div class="row2">
+                        <select name="Department">
+                            <option value="Sales">Sales</option>
+                            <option value="Research & Development">
+                                Research & Development
+                            </option>
+                            <option value="Human Resources">
+                                Human Resources
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="DistanceFromHome" />
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" value="1" name="EmployeeCount" />
+                    </div>
+
+                    <div class="row2">
+                        <select name="EnvironmentSatisfaction">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <select name="JobInvolvement">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <select name="JobLevel">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <select name="JobRole">
+                            <option value="Sales Executive">
+                                Sales Executive
+                            </option>
+                            <option value="Sales Representative">
+                                Sales Representative
+                            </option>
+                            <option value="Research Scientist">
+                                Research Scientist
+                            </option>
+                            <option value="Laboratory Technician">
+                                Laboratory Technician
+                            </option>
+                            <option value="Healthcare Representative">
+                                Healthcare Representative
+                            </option>
+                            <option value="Manufacturing Director">
+                                Manufacturing Director
+                            </option>
+                            <option value="Manager">Manager</option>
+                            <option value="Human Resources">
+                                Human Resources
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <select name="JobSatisfaction">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="atr">
+                <div class="col2">
+                    <div class="row">MaritalStatus</div>
+                    <div class="row">MonthlyIncome</div>
+                    <div class="row">NumCompaniesWorked</div>
+                    <div class="row">OverTime</div>
+                    <div class="row">RelationshipSatisfaction</div>
+                    <div class="row">StockOptionLevel</div>
+                    <div class="row">TotalWorkingYears</div>
+                    <div class="row">TrainingTimesLastYear</div>
+                    <div class="row">WorkLifeBalance</div>
+                    <div class="row">YearsAtCompany</div>
+                    <div class="row">YearsInCurrentRole</div>
+                    <div class="row">YearsSinceLastPromotion</div>
+                    <div class="row">YearsWithCurrManager</div>
+                </div>
+
+                <div class="col2">
+                    <div class="row2">
+                        <select name="MaritalStatus">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="MonthlyIncome" />
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="NumCompaniesWorked" />
+                    </div>
+
+                    <div class="row2">
+                        <select name="OverTime">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <select name="RelationshipSatisfaction">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <select name="StockOptionLevel">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="TotalWorkingYears" />
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="TrainingTimesLastYear" />
+                    </div>
+
+                    <div class="row2">
+                        <select name="WorkLifeBalance">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="YearsAtCompany" />
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="YearsInCurrentRole" />
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="YearsSinceLastPromotion" />
+                    </div>
+
+                    <div class="row2">
+                        <input type="number" name="YearsWithCurrManager" />
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Predict" class="btn" />
+        </form>
+        <span id="resulttext">Prediction: </span>
+        <input type="text" value="Output" name="output" id="output" />
+    </body>
+</html>
+
+<script src="{{ url_for('static', filename='js/form.js') }}"></script>

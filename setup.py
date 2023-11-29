@@ -3,12 +3,14 @@ from typing import List
 
 HYPHEN_E_DOT = "-e ."
 
-def get_requirements(filename:str) -> List[str]:
+
+def get_requirements(filename: str) -> List[str]:
     """Get list of requirements from a file"""
     with open(filename) as f:
         requirements = f.read().splitlines()
 
     return requirements.remove("-e .") if HYPHEN_E_DOT in requirements else requirements
+
 
 setup(
     name = 'IML-Project',
@@ -18,4 +20,4 @@ setup(
     license = 'MIT',
     long_description = open('README.md').read(),
     install_requires = get_requirements("requirements.txt")
-) 
+)

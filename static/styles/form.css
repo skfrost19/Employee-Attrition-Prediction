@@ -1,0 +1,62 @@
+.atr {
+  display: flex;
+  /* flex-direction: row; */
+}
+.col1 .col2 {
+  margin: 10px;
+  /* width: 250; */
+}
+
+.row {
+  margin: 5px;
+  padding: 5px;
+  font-size: larger;
+  /* width: 100px; */
+}
+.row2 {
+  margin: 5px;
+  padding: 2px;
+  font-size: larger;
+  display: block;
+  /* width: 50px; */
+}
+
+.row2 > input {
+  border-radius: 20px;
+  width: max-content;
+  border: 1px solid;
+  padding: 5px;
+}
+.row2 > select {
+  border-radius: 20px;
+  width: max-content;
+  border: 1px solid;
+  padding: 5px;
+}
+.btn {
+  padding: 10px 90px;
+  margin: auto;
+  border: 0px;
+  font-size: 30px;
+  border-radius: 32px;
+  background-color: #f94b4b;
+  color: white;
+  height: 50px;
+}
+.btn:hover {
+  background-color: #c70e0e;
+}
+
+#output {
+  margin: 10px 30px;
+  padding: 5px;
+  font-size: 30px;
+  top: 50px;
+    position: relative;
+}
+#resulttext {
+  font-size: 40px;
+    margin-left: 330px;
+    top: 50px;
+    position: relative;
+}
