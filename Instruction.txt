@@ -17,3 +17,7 @@ Step 5:- Check the output in the Prediction section
 NOTE: - 
 If you encounter error in Step 1, then remove "-e ." from requirements.txt file , install the dependencies using "pip install -r requirements.txt"
 and run execute from Step 2.
+
+NOTE: - 
+If you get error in "Data Ingestion Phase" (check log) then download the dataset (rename it to "employee_attrition.csv") from the below link and place it in the "data" folder.
+        - https://raw.githubusercontent.com/IBM/employee-attrition-aif360/master/data/emp_attrition.csv
