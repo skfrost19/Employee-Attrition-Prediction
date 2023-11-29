@@ -77,5 +77,3 @@ The results are summarized below:
 | Logistic Regression | 0.78     | 0.49      | 0.24   | 0.32     | 0.61          |
 | Decision Tree       | 0.97     | 0.93      | 0.92   | 0.92     | 0.96          |
 | Random Forest       | 0.99     | 0.99      | 0.97   | 0.98     | 0.99          |
-| XGBoost             | 0.99     | 0.99      | 0.97   | 0.98     | 0.99          |
-| LightGBM            | 0.99     | 0.99      | 0.97   | 0.98     | 0.99          |

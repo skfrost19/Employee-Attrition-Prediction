@@ -3,3 +3,6 @@ __pycache__/
 data/
 models/
 encoders/
+build/
+dist/
+IML_Project.egg-info/
