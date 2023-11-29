@@ -54,9 +54,7 @@ The following models are built:
 
 1. Logistic Regression
 2. Decision Tree
-3. Random Forest
-4. XGBoost
-5. LightGBM
+3. SVM
 
 ## Model Evaluation
 
@@ -66,14 +64,13 @@ The models are evaluated using the following metrics:
 2. Precision
 3. Recall
 4. F1 Score
-5. ROC AUC Score
 
 ## Results
 
 The results are summarized below:
 
-| Model               | Accuracy | Precision | Recall | F1 Score | ROC AUC Score |
-| ------------------- | -------- | --------- | ------ | -------- | ------------- |
-| Logistic Regression | 0.78     | 0.49      | 0.24   | 0.32     | 0.61          |
-| Decision Tree       | 0.97     | 0.93      | 0.92   | 0.92     | 0.96          |
-| Random Forest       | 0.99     | 0.99      | 0.97   | 0.98     | 0.99          |
+| Model               | Accuracy | Precision | Recall | F1 Score |
+| ------------------- | -------- | --------- | ------ | -------- |
+| Logistic Regression | 0.70     | 0.49      | 0.24   | 0.32     |
+| SVM                 | 0.63     | 0.93      | 0.92   | 0.92     |
+| Random Forest       | 0.97     | 1.00      | 0.94   | 0.97     |
