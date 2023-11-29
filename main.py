@@ -4,7 +4,7 @@ from src.components.predict import predict
 
 
 if __name__ == "__main__":
-    # pipeline()
+    pipeline()
     # Must be in this order
     params = {
         "Age": 41,

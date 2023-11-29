@@ -1,15 +1,19 @@
 Step 1:- Run Setup file
         - python setup.py install
 
-Step 2:- Start the flask server
+Step 2:- Run the pipeline
+        - python main.py
+
+Step 3: Start the flask server
         - python app.py
     
-Step 3:- Open the browser and hit the url
+Step 4:- Open the browser and hit the url
         - http://localhost:5000/
 
-Step 4:- Fill the form and submit it
+Step 5:- Fill the form and submit it
 
 Step 5:- Check the output in the Prediction section
 
-Optional:
-    - To test the function use main.py file
+NOTE: - 
+If you encounter error in Step 1, then remove "-e ." from requirements.txt file , install the dependencies using "pip install -r requirements.txt"
+and run execute from Step 2.
